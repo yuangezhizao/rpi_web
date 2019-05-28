@@ -6,16 +6,11 @@
     :Site: https://www.yuangezhizao.cn
     :Copyright: © 2019 yuangezhizao <root@yuangezhizao.cn>
 '''
-from sanic import Sanic
-from sanic.response import json
+from flask import Flask
 
-app = Sanic()
+app = Flask(__name__)
 
 
 @app.route('/')
-async def test(request):
-    return json({'hello': 'world'})
-
-
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8000)
+def hello_world():
+    return 'Hello, World!'
